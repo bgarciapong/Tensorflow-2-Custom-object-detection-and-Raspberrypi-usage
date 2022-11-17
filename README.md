@@ -22,11 +22,55 @@ for this project I have used my own dataset which is a Card deck model.
 - you will now have to download CUDA and cuDNN these are tools that will utilize the graphics memory of the GPU and shift the workload. I recomend watching a video on how to donload these two. ***I downloaded CUDA version 11.5 and cuDNN version 8.3, this version worked with Tensorflow 2 version 2.8.0.
 
 <p align="center">
-  <img src="doc/pills.png">
+  <img src="img/anaconda.png">
 </p>
 
 
+we will now create a virtual enviroment with this command
+
+```
+conda create -n tensorflow pip python=3.8
+```
+Then activate the environment with
+
+```
+conda activate tensorflow
+```
+**Note that whenever you open a new Anaconda Terminal you will not be in the virtual environment. So if you open a new prompt make sure to use the command above to activate the virtual environment**
+
+Once done with this we have everything needed to install TensorFlow-GPU (or TensorFlow CPU). So we can navigate back to our anaconda prompt, and issue the following command
+
+```
+pip install tensorflow-gpu
+```
+
+If you are installing TensorFlow CPU, instead use
+
+```
+pip install tensorflow
+```
+Once we are done with the installation, we can use the following code to check if everything installed properly
+
+```
+python
+>>> import tensorflow as tf
+>>> print(tf.__version__)
+```
+If everything has installed properly you should get the message, "2.3.0", or whatever version of TensorFlow you have. This means TensorFlow is up and running and we are ready to setup our workspace. We can now proceed to the next step!
+**Note if there is an error with importing, you must install [Visual Studio 2019 with C++ Build Tools](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16).**
+
 ### Workspace and Anaconda virtual enviroment
+For the TensorFlow Object Detection API, there is a certain directory structure that we must follow to train our model. To make the process a bit easier, I added most of the necessary files in this repository.
+
+
+```
+cd C:\TensorFlow
+```
+Once you are here, you will have to clone the [TensorFlow models repository](https://github.com/tensorflow/models) with
+
+```
+git clone https://github.com/tensorflow/models.git
+```
 
 ### training Data
 
